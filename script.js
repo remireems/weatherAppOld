@@ -5,6 +5,8 @@ const savedCities = JSON.parse(localStorage.getItem('savedCities')) || []
 // gets current date
 const currentDate = moment().format('L')
 
+// gets 
+
 // click event for search btn
 document.getElementById('searchBtn').addEventListener('click', event => {
   event.preventDefault()
@@ -16,7 +18,7 @@ document.getElementById('searchBtn').addEventListener('click', event => {
     .then(res => {
       let cities = res.data
 
-      axios.get(`https://api.openweathermap.org/data/2.5/onecall?lat=${cities.coord.lat}&lon=${cities.coord.lon}&units=imperial&exclude=minutely,hourly,daily,alerts&appid=04a3de3d38e1f0efbd3cb73d312aa4b6`)
+      axios.get(`https://api.openweathermap.org/data/2.5/onecall?lat=${cities.coord.lat}&lon=${cities.coord.lon}&units=imperial&exclude=minutely,hourly,alerts&appid=04a3de3d38e1f0efbd3cb73d312aa4b6`)
         .then(res => {
           let citiesInfo = res.data
           console.log(citiesInfo)
@@ -29,8 +31,8 @@ document.getElementById('searchBtn').addEventListener('click', event => {
               <h3>Wind Speed: ${cities.wind.speed} MPH</h3>
               <h3>UV Index: <div class="uviBox" id="uviBox">${citiesInfo.current.uvi}</div></h3>
             </div>
-            `
-          
+          `
+
           // variable that contains city's uvi value
           let cityUVI = citiesInfo.current.uvi
 
@@ -45,6 +47,24 @@ document.getElementById('searchBtn').addEventListener('click', event => {
             document.getElementById('uviBox').classList.add('veryHighUVI')
           }
 
+          document.getElementById('futureWeather').innerHTML = `
+            <div>
+              <div class="row">
+                <div class="col-2>
+                  <h2></h2>
+                </div>
+                <div class="col-2>
+                </div>
+                <div class="col-2>
+                </div>
+                <div class="col-2>
+                </div>
+                <div class="col-2>
+                </div>
+              </div>
+            </div>
+          `
+
         })
         .catch(err => console.error(err))
 
@@ -52,7 +72,7 @@ document.getElementById('searchBtn').addEventListener('click', event => {
       // need to save
       // localStorage.setItem('cities', JSON.stringify(cities))
     })
-  
+
   axios.get(``)
-    
+
 })
