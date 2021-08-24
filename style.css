@@ -1,0 +1,19 @@
+.uviBox {
+  display: inline;
+}
+
+.lowUVI {
+  background-color: yellowgreen;
+}
+
+.medUVI {
+  background-color: yellow;
+}
+
+.highUVI {
+  background-color: orange;
+}
+
+.veryHighUVI {
+  background-color: red;
+}
