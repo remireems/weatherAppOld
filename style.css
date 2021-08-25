@@ -1,5 +1,7 @@
 .uviBox {
   display: inline;
+  border-radius: 10px;
+  padding: 5px;
 }
 
 .lowUVI {
@@ -16,4 +18,13 @@
 
 .veryHighUVI {
   background-color: red;
+}
+
+.card-body {
+  padding: 0;
+  margin-right: 5px;
+}
+
+.daysWea {
+  padding: 0;
 }

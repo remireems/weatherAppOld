@@ -47,23 +47,28 @@ document.getElementById('searchBtn').addEventListener('click', event => {
             document.getElementById('uviBox').classList.add('veryHighUVI')
           }
 
-          document.getElementById('futureWeather').innerHTML = `
-            <div>
-              <div class="row">
-                <div class="col-2>
-                  <h2></h2>
-                </div>
-                <div class="col-2>
-                </div>
-                <div class="col-2>
-                </div>
-                <div class="col-2>
-                </div>
-                <div class="col-2>
-                </div>
-              </div>
-            </div>
-          `
+
+
+          for (let i = 0; i < 5; i++) {
+
+            const futureWeatherEl = document.createElement('div')
+            futureWeatherEl.className = 'card col-sm-3 daysWea text-center'
+            futureWeatherEl.innerHTML = `
+             
+                
+                  <div class="card-body">
+                    <h5 class="card-title">Yes</h5>
+                    <img src="https://openweathermap.org/img/w/${citiesInfo.daily[i].weather[0].icon}.png" alt="${citiesInfo.daily[i].weather[0].description}"/>
+                    <p class="card-text">Temp: ${citiesInfo.daily[i].temp.day}°F</p>
+                    <p class="card-text">Humidity: ${citiesInfo.daily[i].humidity}%</p>
+                  </div>
+               
+            
+            `
+            document.getElementById('futureWeather').append(futureWeatherEl)
+
+          }
+
 
         })
         .catch(err => console.error(err))
