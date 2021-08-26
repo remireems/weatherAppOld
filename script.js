@@ -103,7 +103,7 @@ document.getElementById('searchBtn').addEventListener('click', event => {
 
 document.addEventListener('click', event => {
   if (event.target.classList.contains('cityLiBtn')) {
-    localStorage.setItem('savedCities', JSON.stringify(savedCities))
+    
   }
 })
 
