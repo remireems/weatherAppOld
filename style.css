@@ -1,3 +1,25 @@
+* {
+  padding: 0;
+}
+
+/* body {
+  height: 100vh;
+} */
+
+#rowBox {
+  --bs-gutter-x: -1rem;
+}
+
+.col-8 {
+  padding: 0;
+}
+
+#currentCityWeather {
+  border: 1px solid black;
+  margin: 5px;
+  padding: 0;
+}
+
 .uviBox {
   display: inline;
   border-radius: 10px;
@@ -22,9 +44,12 @@
 
 .card-body {
   padding: 0;
-  margin-right: 5px;
 }
 
 .daysWea {
   padding: 0;
+}
+
+#cityLiBtn {
+  border: none;
 }
