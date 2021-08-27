@@ -1,23 +1,40 @@
 * {
+  margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
-/* body {
+body {
   height: 100vh;
-} */
-
-#rowBox {
-  --bs-gutter-x: -1rem;
 }
 
-.col-8 {
-  padding: 0;
+#searchCon {
+  padding: 5px;
+  margin: 0;
+}
+
+#cityName {
+  font-size: 1.5rem;
+}
+
+.conBox {
+  height: 100vh;
 }
 
 #currentCityWeather {
   border: 1px solid black;
   margin: 5px;
-  padding: 0;
+  padding: 15px;
+}
+
+#forecastBox {
+  border: 1px solid black;
+  margin: 5px;
+  padding: 15px;
+}
+
+#futureWeather {
+  justify-content: space-evenly;
 }
 
 .uviBox {
@@ -47,9 +64,5 @@
 }
 
 .daysWea {
-  padding: 0;
-}
-
-#cityLiBtn {
-  border: none;
+  padding: 1px;
 }

@@ -14,7 +14,7 @@ const renderCityList = () => {
     searchEl.className = 'card'
     searchEl.innerHTML = `
       <ul class="list-group list-group-flush">
-        <button class="cityLiBtn"><li class="list-group-item">${cityList[i].search}</li></button>
+        <button class="cityLiBtn" style="border: none;"><li class="list-group-item">${cityList[i].search}</li></button>
       </ul>
     `
     document.getElementById('searchList').prepend(searchEl)
@@ -81,7 +81,7 @@ document.getElementById('searchBtn').addEventListener('click', event => {
 
             // create 5 day forecast cards
             const futureWeatherEl = document.createElement('div')
-            futureWeatherEl.className = 'card col-sm-2 daysWea text-center'
+            futureWeatherEl.className = 'card col-sm-2 daysWea text-center text-white bg-primary mb-3 mt-3'
             futureWeatherEl.innerHTML = `             
               <div class="card-body">
                 <h5 class="card-title">${futureDate}</h5>
@@ -93,6 +93,15 @@ document.getElementById('searchBtn').addEventListener('click', event => {
             // appends to display all 5 day forecast cards
             document.getElementById('futureWeather').append(futureWeatherEl)
           }
+
+          // IGNORE, STILL WORK IN PROGRESS
+          // let saveCurCiWea = document.getElementById('currentCityWeather').textContent
+          // let saveCurCiFuWea = document.getElementById('futureWeather').textContent
+          // cityList.push({ search, saveCurCiWea, saveCurCiFuWea })
+          // localStorage.setItem('cityList', JSON.stringify(cityList))
+          // renderCityList()
+
+
         })
         .catch(err => console.error(err))
     })
@@ -101,10 +110,17 @@ document.getElementById('searchBtn').addEventListener('click', event => {
   document.getElementById('futureWeather').innerHTML = ''
 })
 
-document.addEventListener('click', event => {
-  if (event.target.classList.contains('cityLiBtn')) {
-    
-  }
-})
+// IGNORE, STILL WORK IN PROGRESS
+// document.addEventListener('click', event => {
+//   if (event.target.classList.contains('cityLiBtn')) {
+//     console.log('yes')
+//     // if (event.target.li === event.target.dataset.searchName) {
+//     //   // console.log('yes')
+//     //   // cityList.push({ search, saveCurCiWea, saveCurCiFuWea })
+//     //   // document.getElementById('currentCityWeather').value = `${cityList[0].saveCurCiWea}`
+//     //   // document.getElementById('futureWeather').value = `${cityList[0].saveCurCiFuWea}`
+//     // }
+//   }
+// })
 
 renderCityList()
